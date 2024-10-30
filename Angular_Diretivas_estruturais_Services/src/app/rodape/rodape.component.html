@@ -1,0 +1,8 @@
+<footer class="bg-dark text-light py-3 mt-auto text-center">
+  <div *ngIf="usuarioLogado">
+    <p>Usuário logado: {{ usuarioLogado.nome }}</p>
+  </div>
+  <div *ngIf="!usuarioLogado">
+    <p>Nenhum usuário logado</p>
+  </div>
+</footer>
