@@ -9,7 +9,7 @@ import { UsuarioService } from '../usuario.service';
 export class RodapeComponent implements OnInit {
   usuarioLogado: any;
 
-  constructor(private usuarioService: UsuarioService) {}
+  constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
     this.usuarioLogado = this.usuarioService.getUsuario();

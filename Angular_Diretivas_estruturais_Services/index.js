@@ -1,11 +1,11 @@
 const express = require('express');
-const cors = require('cors'); // Importa o cors
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
 
-app.use(cors({ origin: 'http://localhost:4200' })); 
-app.use(express.json()); 
+app.use(cors({ origin: 'http://localhost:4200' }));
+app.use(express.json());
 
 
 let clientes = [
@@ -26,7 +26,7 @@ app.get('/clientes', (req, res) => {
   res.json(clientes);
 });
 
-// 2. Obter um cliente pelo ID
+
 app.get('/clientes/:id', (req, res) => {
   const cliente = clientes.find(c => c.id === parseInt(req.params.id));
   if (cliente) {
@@ -36,7 +36,7 @@ app.get('/clientes/:id', (req, res) => {
   }
 });
 
-// 3. Adicionar um novo cliente
+
 app.post('/clientes', (req, res) => {
   const novoCliente = {
     id: clientes.length + 1,
@@ -47,7 +47,7 @@ app.post('/clientes', (req, res) => {
   res.status(201).json(novoCliente);
 });
 
-// 4. Atualizar um cliente existente
+
 app.put('/clientes/:id', (req, res) => {
   const cliente = clientes.find(c => c.id === parseInt(req.params.id));
   if (cliente) {
@@ -59,7 +59,7 @@ app.put('/clientes/:id', (req, res) => {
   }
 });
 
-// 5. Excluir um cliente pelo ID
+
 app.delete('/clientes/:id', (req, res) => {
   const index = clientes.findIndex(c => c.id === parseInt(req.params.id));
   if (index !== -1) {
@@ -70,7 +70,7 @@ app.delete('/clientes/:id', (req, res) => {
   }
 });
 
-// Iniciar o servidor
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

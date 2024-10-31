@@ -7,11 +7,11 @@ export class UsuarioService {
   private usuarioLogado: any = null;
 
   constructor() {
-    // Defina um usuário simulado para teste
+
     this.setUsuario({
       id: 1,
-      nome: 'Usuário Teste',
-      email: 'usuario@teste.com'
+      nome: 'Janaina',
+      email: 'janaina@teste.com'
     });
   }
 

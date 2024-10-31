@@ -1,14 +1,14 @@
 <div class="container-md my-4">
   <h2 class="text-center mb-4">Lista de Clientes</h2>
 
-  <!-- Botão para expandir/contrair o colapso -->
+
   <div class="text-center mb-3">
     <button class="btn btn-primary" (click)="isCollapsed = !isCollapsed">
       {{ isCollapsed ? 'Mostrar' : 'Ocultar' }} Lista de Clientes
     </button>
   </div>
 
-  <!-- Div do colapso com a lista de clientes -->
+
   <div [ngbCollapse]="isCollapsed" class="card shadow-sm p-3 mb-4 bg-white rounded">
     <ul class="list-group list-group-flush">
       <li *ngFor="let cliente of clientes" class="list-group-item d-flex justify-content-between align-items-center">
@@ -21,7 +21,7 @@
     </ul>
   </div>
 
-  <!-- Seção de detalhes do cliente -->
+
   <div *ngIf="clienteSelecionado" class="card shadow-sm p-4 mb-4 bg-light">
     <h3 class="card-title text-center">Detalhes do Cliente</h3>
     <div class="card-body">
@@ -35,7 +35,8 @@
         <input type="email" [(ngModel)]="clienteSelecionado.email" class="form-control" placeholder="Email" />
       </div>
       <div class="text-center">
-        <button class="btn btn-success" (click)="atualizaCliente(clienteSelecionado.id, { nome: clienteSelecionado.nome, email: clienteSelecionado.email })">
+        <button class="btn btn-success"
+          (click)="atualizaCliente(clienteSelecionado.id, { nome: clienteSelecionado.nome, email: clienteSelecionado.email })">
           Atualizar Cliente
         </button>
       </div>
